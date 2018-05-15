@@ -1,0 +1,15 @@
+
+mpd:
+    build: .
+    container_name: mpd
+    restart: "always"
+
+    ports:
+        - "32166:6600"
+        - "32188:8000"
+
+    volumes:
+        - /media/raid0/music:/mpd/music
+        - /media/raid0/playlists:/mpd/playlists
+        - /srv/mpd:/mpd/cache
+
